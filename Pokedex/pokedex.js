@@ -5,7 +5,6 @@ async function pokemon() {
   const resPokemon = await res.json ();
   allPokemon.push(resPokemon);
 }} 
-
 const mapPokemon = (pokem) =>{
     const mappedPokemons = pokem.map((poke) => ({
       id: poke.id,
@@ -17,7 +16,6 @@ const mapPokemon = (pokem) =>{
     }))
     return mappedPokemons
   }
-
   const imprimirPokemons = (pokem) => {
     const ol$$ = document.querySelector("ol");
     const div$$ = document.createElement('div');
@@ -33,26 +31,22 @@ const mapPokemon = (pokem) =>{
     div$$.appendChild(h2$$);
     document.body.appendChild(ol$$)
   }
-
   const searchPoke = (nombre,mapPokemon) => {
     const filterPoke = mapPokemon.filter( (pokemon) => pokemon.name.toLowerCase().includes(nombre.toLowerCase()));//, (pokemon) => pokemon.type.toLowerCase().includes(type.toLowerCase()));
     console.log(filterPoke);
     imprimirPokemons(filterPoke);
 }
-
   const setListener = (mappedPokemons) => {
     let btn$$ = document.querySelector("button");
     let input$$ = document.querySelector("input");
     btn$$.addEventListener('click',() => searchPoke (input$$.value,allPokemon));
   }
-
   async function init () {
     const imprimirPokemon = await pokemon();
     const mappedPokemons = mapPokemon(allPokemon);
     console.log(mappedPokemons);
     for (const pokemon of allPokemon) {
     imprimirPokemons(pokemon);
-    
   }}
 setListener(allPokemon);
   init();

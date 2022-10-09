@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.boxground {
+  width: 100%;
+  background-image: url("/img/MicrosoftTeams-image (5).png");
+  border: solid black;
+}
+
+.h1Logo {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.boxpika {
+  display: block;
+  justify-content: center;
+}
+
+.boxinic {
+  width: 100%;
+}
+
+.pika {
+  width: 150px;
+}
+
+.logoPok {
+  width: 450px;
+}/*# sourceMappingURL=styles.css.map */
